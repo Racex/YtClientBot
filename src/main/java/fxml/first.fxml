@@ -1,0 +1,49 @@
+<?import fxmlcustompackage.NumberTextField?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:controller="controller.FirstController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Text text="YT BOT"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="4"/>
+
+    <Label text="adres linku:"
+           GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <TextField fx:id="adres_linku"
+               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="ilosc wyswietlen:"
+           GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <NumberTextField fx:id="ilosc_wyswietlen"
+                     GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="ilosc lików:"
+           GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+    <NumberTextField fx:id="ilosc_likow"
+                     GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="ilosc komentarzy:"
+           GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+
+    <NumberTextField fx:id="ilosc_komentarzy"
+                     GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Label text="adres maliny"
+           GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+    <TextField fx:id="adres_maliny"
+               GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Button text="Send"
+            onAction="#send" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+    <!--<ProgressBar fx:id="progressBar" GridPane.rowIndex="7" layoutX="54.0" layoutY="103.0" prefHeight="51.0" prefWidth="326.0" progress="0.0" />-->
+
+    <TextArea fx:id="massage" text="Wiadomosc" visible="false" prefHeight="100.0" prefWidth="100.0"
+              GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+
+
+</GridPane>
