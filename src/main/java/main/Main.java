@@ -1,4 +1,4 @@
-package sample;
+package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,11 +9,11 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-//        System.out.println(getClass().getResource("").getPath());
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/first.fxml"));
         primaryStage.setTitle("Ale bedzie bocik xd");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        root.getStylesheets().add(getClass().getResource("../css/errorButtonStyle.css").toExternalForm());
+        primaryStage.setScene(new Scene(root, 1000, 500));
         primaryStage.show();
     }
 

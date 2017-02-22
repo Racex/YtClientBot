@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0"
+      prefWidth="604.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.SecondController">
+
+    <Button layoutX="82.0" layoutY="418.0" mnemonicParsing="false" onAction="#back" text="Wstecz"/>
+    <Button layoutX="488.0" layoutY="433.0" mnemonicParsing="false" onAction="#end" text="Zakończ"/>
+    <TextArea fx:id="massageArea" layoutX="82.0" layoutY="14.0" prefHeight="305.0" prefWidth="481.0"/>
+    <ProgressBar fx:id="progressBar" layoutX="82.0" layoutY="334.0" prefHeight="54.0" prefWidth="329.0"/>
+    <Label fx:id="progress" layoutX="487.0" layoutY="340.0" prefHeight="42.0" prefWidth="67.0"/>
+
+</Pane>
