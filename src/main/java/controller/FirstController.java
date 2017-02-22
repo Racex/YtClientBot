@@ -29,7 +29,7 @@ public class FirstController extends ElementsController implements ControllerInt
     @FXML
     public void send(ActionEvent actionEvent) {
 
-        if (elementsIsNotEmpty()) {
+        if (checkIfElementsAreEmptyAndShowErrorOnUI()) {
             JSONObject json;
             json = new JSONObject();
             json.put("adres_linku", adres_linku.getText());
@@ -58,7 +58,9 @@ public class FirstController extends ElementsController implements ControllerInt
 
     public Parent getContent() {
         try {
-            return FXMLLoader.load(getClass().getResource("/fxml/first.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../fxml/first.fxml"));
+            root.getStylesheets().add(getClass().getResource("../css/errorButtonStyle.css").toExternalForm());
+            return root;
         } catch (IOException e) {
             e.printStackTrace();
         }

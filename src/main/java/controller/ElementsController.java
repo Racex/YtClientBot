@@ -11,20 +11,20 @@ import java.util.Collections;
  * Created by Maciek on 2017-02-10.
  */
 public abstract class ElementsController {
-    public TextField adres_linku;
-    public TextField ilosc_wyswietlen;
-    public TextField ilosc_komentarzy;
-    public TextField ilosc_likow;
-    public TextField adres_maliny;
-    public TextArea massage;
-    public static ArrayList<TextField> requiredElements = new ArrayList<TextField>();
-    public static ArrayList<TextField> notRequiredElements = new ArrayList<TextField>();
+    public  TextField adres_linku;
+    public  TextField ilosc_wyswietlen;
+    public  TextField ilosc_komentarzy;
+    public  TextField ilosc_likow;
+    public  TextField adres_maliny;
+    public  TextArea massage;
+    private ArrayList<TextField> requiredElements = new ArrayList<TextField>();
+    private ArrayList<TextField> notRequiredElements = new ArrayList<TextField>();
 
-    public boolean elementsIsNotEmpty() {
+    public boolean checkIfElementsAreEmptyAndShowErrorOnUI() {
         boolean isNotEmpty = true;
         if (requiredElements.isEmpty() || notRequiredElements.isEmpty())
             prepareAllTextField();
-        if (isTextFieldEmpty()) {
+        if (checkIfTextFieldInArrayListsAreEmpty()) {
             isNotEmpty = false;
             massage.setText("Wypełnij wymagane pola");
             massage.setVisible(true);
@@ -33,7 +33,7 @@ public abstract class ElementsController {
     }
 
 
-    public boolean isTextFieldEmpty() {
+    public boolean checkIfTextFieldInArrayListsAreEmpty() {
         int count = 0;
         for (TextField x : requiredElements) {
             if (!x.getText().equals("")) {
@@ -44,8 +44,6 @@ public abstract class ElementsController {
             }
             if (count == 2) {
                 for (TextField y : notRequiredElements) {
-                    System.out.println(y.toString());
-
                     if (!y.getText().equals("")) {
                         setFrame(y, false);
                         return false;
